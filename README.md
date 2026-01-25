@@ -55,7 +55,7 @@ jobs:
 - **Free** — Basic README generation (uses gpt-3.5-turbo)
 - **Pro $9/mo** — Full API docs, GPT-4, priority support
 
-[Get Pro →](https://synthwork.io/docbot.html#pricing)
+[Get Pro →](https://buy.stripe.com/eVq3cw1uTeeOeUt3xHbMQ03)
 
 ## Examples
 
