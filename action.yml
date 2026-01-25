@@ -1,6 +1,7 @@
-name: 'DocBot'
-description: 'AI-powered documentation generator'
+name: 'DocBot - AI Documentation Generator'
+description: 'Automatically generate and update documentation for your repositories using AI'
 author: 'Synthwork'
+
 branding:
   icon: 'book-open'
   color: 'blue'
@@ -11,7 +12,7 @@ inputs:
     required: false
     default: 'readme'
   api-key:
-    description: 'DocBot API key for Pro features'
+    description: 'OpenAI API key (or set OPENAI_API_KEY env var)'
     required: false
   output-path:
     description: 'Output path for generated docs'
@@ -20,7 +21,7 @@ inputs:
 
 outputs:
   files-updated:
-    description: 'List of files created or updated'
+    description: 'Comma-separated list of files created or updated'
 
 runs:
   using: 'node20'
