@@ -1,0 +1,27 @@
+name: 'DocBot'
+description: 'AI-powered documentation generator'
+author: 'Synthwork'
+branding:
+  icon: 'book-open'
+  color: 'blue'
+
+inputs:
+  mode:
+    description: 'Generation mode: readme, api, or full'
+    required: false
+    default: 'readme'
+  api-key:
+    description: 'DocBot API key for Pro features'
+    required: false
+  output-path:
+    description: 'Output path for generated docs'
+    required: false
+    default: '.'
+
+outputs:
+  files-updated:
+    description: 'List of files created or updated'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
