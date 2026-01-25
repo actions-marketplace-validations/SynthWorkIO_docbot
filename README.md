@@ -13,16 +13,19 @@ Automatically generate and update documentation for your projects using AI. Stop
 name: Generate Docs
 on: [push]
 
+permissions:
+  contents: write  # Required for auto-commit
+
 jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: synthwork/docbot@v1
-        with:
-          mode: 'readme'
+      
+      - uses: SynthWorkIO/docbot@v1
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "docs: Update README [DocBot]"
@@ -50,18 +53,20 @@ jobs:
 - **api** — Generate API documentation (detects Express, FastAPI, etc.)
 - **full** — Both README and API docs
 
+## Works Without API Key
+
+DocBot generates basic documentation even without an API key. Add `OPENAI_API_KEY` for AI-enhanced docs.
+
 ## Pricing
 
-- **Free** — Basic README generation (uses gpt-3.5-turbo)
+- **Free** — Basic README generation
 - **Pro $9/mo** — Full API docs, GPT-4, priority support
 
 [Get Pro →](https://buy.stripe.com/eVq3cw1uTeeOeUt3xHbMQ03)
 
-## Examples
+## Example
 
-See generated READMEs:
-- [Example Node.js Project](examples/nodejs)
-- [Example Python Project](examples/python)
+See it in action: [docbot-test](https://github.com/SynthWorkIO/docbot-test)
 
 ## License
 
